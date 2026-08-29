@@ -10,6 +10,113 @@
     <link href="./content/tailwind_output.css" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
+    <style>
+      .caterpillar-scene {
+        position: relative;
+        width: min(100%, 900px);
+        aspect-ratio: 5 / 1.35;
+        margin-inline: auto;
+      }
+      .caterpillar-body {
+        position: absolute;
+        inset: 26% 1% 8% 11%;
+        display: flex;
+        align-items: center;
+      }
+      .caterpillar-segment {
+        position: relative;
+        display: grid;
+        place-items: center;
+        flex: 0 0 12.2%;
+        aspect-ratio: 1;
+        margin-left: -1.35%;
+        border: clamp(2px, .45vw, 5px) solid #111;
+        border-radius: 50%;
+        background: radial-gradient(circle at 38% 28%, #b7e4ad 0 13%, #91cd88 36%, #77ba70 100%);
+        color: #db1010;
+        font-family: Arial, sans-serif;
+        font-size: clamp(1.25rem, 4.1vw, 3.45rem);
+        font-weight: 400;
+        line-height: 1;
+      }
+      .caterpillar-segment::after {
+        content: "";
+        position: absolute;
+        left: 43%;
+        bottom: -18%;
+        width: 15%;
+        height: 27%;
+        border: clamp(2px, .4vw, 5px) solid #111;
+        border-top: 0;
+        border-radius: 0 0 999px 999px;
+        background: #8acb82;
+        transform: rotate(-16deg);
+      }
+      .caterpillar-head {
+        z-index: 4;
+        flex-basis: 14.5%;
+        margin-left: 0;
+        background: radial-gradient(circle at 35% 28%, #2f8e31 0 12%, #126c21 55%, #075515 100%);
+      }
+      .caterpillar-head::after { display: none; }
+      .caterpillar-eye {
+        position: absolute;
+        top: 28%;
+        width: 20%;
+        height: 31%;
+        border: clamp(2px, .35vw, 4px) solid #111;
+        border-radius: 50%;
+        background: white;
+      }
+      .caterpillar-eye::after {
+        content: "";
+        position: absolute;
+        inset: 23% 24%;
+        border-radius: 50%;
+        background: #111;
+      }
+      .caterpillar-eye.left { left: 22%; }
+      .caterpillar-eye.right { right: 22%; }
+      .caterpillar-nose {
+        position: absolute;
+        left: 46%;
+        top: 55%;
+        width: 11%;
+        height: 10%;
+        border-left: 3px solid #111;
+        border-bottom: 3px solid #111;
+        border-radius: 0 0 0 70%;
+      }
+      .caterpillar-smile {
+        position: absolute;
+        left: 25%;
+        bottom: 15%;
+        width: 50%;
+        height: 22%;
+        border-bottom: clamp(2px, .4vw, 5px) solid #111;
+        border-radius: 0 0 50% 50%;
+      }
+      .caterpillar-antenna {
+        position: absolute;
+        bottom: 83%;
+        width: 38%;
+        height: 58%;
+        border: clamp(2px, .4vw, 5px) solid #111;
+        border-bottom: 0;
+        border-radius: 50% 50% 0 0;
+      }
+      .caterpillar-antenna.left { left: 3%; transform: rotate(-34deg); }
+      .caterpillar-antenna.right { right: 4%; transform: rotate(24deg); }
+      .caterpillar-tail-one { flex-basis: 8%; background: #237d2b; }
+      .caterpillar-tail-two { flex-basis: 5%; background: #12661e; }
+      .caterpillar-tail-one::after,
+      .caterpillar-tail-two::after { display: none; }
+      @media (max-width: 520px) {
+        .caterpillar-scene { aspect-ratio: 4.2 / 1.45; }
+        .caterpillar-body { inset-inline: 2%; }
+        .caterpillar-segment { flex-basis: 12.5%; }
+      }
+    </style>
 </head>
 
 <body class="min-h-screen flex items-center justify-center">
@@ -28,13 +135,30 @@
       </div>
 
       <div class="mb-10 flex flex-col items-center">
-        <div class="relative inline-block max-w-full">
-          <img src="images/pg068_im001-original-page.png" alt="Kiwavi wa kijani mwenye silabi fta, sko, ptu na tre kwenye mwili wake." data-id="pg068_im001" class="max-w-full h-auto" style="max-width: 100%; height: auto;">
-          <span data-id="pg068_n0005" class="sr-only">fta</span>
-          <span data-id="pg068_n0006" class="sr-only">sko</span>
-          <span data-id="pg068_n0007" class="sr-only">ptu</span>
-          <span data-id="pg068_n0008" class="sr-only">tre</span>
+        <div class="caterpillar-scene" role="img" aria-label="Kiwavi wa kijani mwenye silabi fta, sko, ptu na tre kwenye mwili wake.">
+          <div class="caterpillar-body" aria-hidden="true">
+            <div class="caterpillar-segment caterpillar-head">
+              <span class="caterpillar-antenna left"></span>
+              <span class="caterpillar-antenna right"></span>
+              <span class="caterpillar-eye left"></span>
+              <span class="caterpillar-eye right"></span>
+              <span class="caterpillar-nose"></span>
+              <span class="caterpillar-smile"></span>
+            </div>
+            <div class="caterpillar-segment"></div>
+            <div class="caterpillar-segment"><span data-id="pg068_n0005">fta</span></div>
+            <div class="caterpillar-segment"></div>
+            <div class="caterpillar-segment"><span data-id="pg068_n0006">sko</span></div>
+            <div class="caterpillar-segment"></div>
+            <div class="caterpillar-segment"><span data-id="pg068_n0007">ptu</span></div>
+            <div class="caterpillar-segment"></div>
+            <div class="caterpillar-segment"><span data-id="pg068_n0008">tre</span></div>
+            <div class="caterpillar-segment"></div>
+            <div class="caterpillar-segment caterpillar-tail-one"></div>
+            <div class="caterpillar-segment caterpillar-tail-two"></div>
+          </div>
         </div>
+        <span data-id="pg068_im001" class="sr-only">Kiwavi wa kijani mwenye silabi fta, sko, ptu na tre kwenye mwili wake.</span>
       </div>
 
       <div class="bg-green-50 border-2 border-green-300 rounded-3xl p-6 shadow-sm">
