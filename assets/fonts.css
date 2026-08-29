@@ -60,6 +60,13 @@ body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select {
   font-family: "Sassoon Primary", "Merriweather", serif;
 }
 
+/* The bundled Sassoon file is the regular face, so reinforce synthesized
+   bold text to match the heavier typography in the printed book. */
+strong, b, .font-bold, .font-extrabold {
+  font-weight: 900;
+  -webkit-text-stroke: 0.2px currentColor;
+}
+
 /* Chrome UI font. FontAwesome marker classes are exempt: this ID+universal
    selector would otherwise beat FA's `.fa { font-family: "Font Awesome …" }`
    rule and its ::before glyph would render as a missing character. */
