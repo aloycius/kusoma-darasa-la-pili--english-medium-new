@@ -1,6 +1,6 @@
 {
   "title": "Kusoma",
-  "bundleVersion": "47",
+  "bundleVersion": "48",
   "languages": {
     "available": [
       "sw"
@@ -8,7 +8,7 @@
     "default": "sw"
   },
   "features": {
-    "signLanguage": false,
+    "signLanguage": true,
     "easyRead": true,
     "glossary": false,
     "eli5": false,
