@@ -1,7 +1,13 @@
 [
   {
-    "section_id": "pg001_sec001",
+    "section_id": "cover_front",
     "href": "index.html",
+    "is_cover": true,
+    "label": "Jalada la mbele"
+  },
+  {
+    "section_id": "pg001_sec001",
+    "href": "pg001_sec001.html",
     "page_number": 1
   },
   {
@@ -475,5 +481,11 @@
     "section_id": "pg096_sec001",
     "href": "pg096_sec001.html",
     "page_number": 90
+  },
+  {
+    "section_id": "cover_back",
+    "href": "back-cover.html",
+    "is_cover": true,
+    "label": "Jalada la nyuma"
   }
 ]
